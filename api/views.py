@@ -13,12 +13,12 @@ class TaskViewSet(viewsets.ModelViewSet):
     serializer_class = TaskSerializer
     tasks = TaskSerializer(Task.objects.all(), many=True)
     data = tasks.data[:]
-    #{task['id']: task for task in data}
+    {task['id']: task for task in data}
 
-"""   def retrieve(self, request, *args, **kwargs):
-        return Response({task['id']: task for task in TaskViewSet.data})
+    """def retrieve(self, request, *args, **kwargs):
+    	return Response({task['id']: task for task in TaskViewSet.data})"""
 
     def list(self, request, *args, **kwargs):
-        return Response({task['id']: task for task in TaskViewSet.data})"""
+        return Response({'desc':TaskViewSet.data})
    
 
